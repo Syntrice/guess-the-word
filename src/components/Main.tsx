@@ -24,6 +24,7 @@ export default function Main() {
             <WordDisplay
                 word={gameLogic.correctWord}
                 guessedLetters={gameLogic.gussedLetters}
+                gameState={gameLogic.gameState}
             />
             <Keyboard
                 onType={gameLogic.guess}

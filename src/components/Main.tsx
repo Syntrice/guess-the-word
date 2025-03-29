@@ -12,9 +12,17 @@ export default function Main() {
         <main className="flex flex-col gap-10">
             <StatusDisplay status={gameLogic.gameState} />
             <LifeIndicator lives={gameLogic.lives} />
-            <WordDisplay word={gameLogic.correctWord} guessedLetters={gameLogic.gussedLetters} />
-            <Keyboard onType={gameLogic.guess} guesses={gameLogic.gussedLetters} correctWord={gameLogic.correctWord} />
-            {(gameLogic.gameState === GameState.Lose || gameLogic.gameState === GameState.Win) && (
+            <WordDisplay
+                word={gameLogic.correctWord}
+                guessedLetters={gameLogic.gussedLetters}
+            />
+            <Keyboard
+                onType={gameLogic.guess}
+                guesses={gameLogic.gussedLetters}
+                correctWord={gameLogic.correctWord}
+            />
+            {(gameLogic.gameState === GameState.Lose ||
+                gameLogic.gameState === GameState.Win) && (
                 <div className="flex justify-center">
                     <Button onClick={gameLogic.restart}>Play Again</Button>
                 </div>

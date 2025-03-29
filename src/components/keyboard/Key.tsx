@@ -44,7 +44,7 @@ export default function Key({ keyState, onClick, children, forceDisable, letter 
                 getKeyColor()
             }
             onClick={onClick}
-            aria-label={"Letter " + {children} + "."}
+            aria-label={"Letter " + {letter} + "."}
             disabled={isKeyDisabled()}
             aria-disabled={isKeyDisabled()}
         >

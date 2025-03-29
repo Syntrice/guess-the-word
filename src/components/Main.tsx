@@ -1,4 +1,4 @@
-import useGameLogic, { GameLogic, GameState } from "../logic/game-logic";
+import useGameLogic, { GameState } from "../logic/game-logic";
 import Button from "./common/Button";
 import Keyboard from "./keyboard/Keyboard";
 import LifeIndicator from "./life-indicator/LifeIndicator";

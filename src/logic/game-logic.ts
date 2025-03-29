@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { words } from "./words";
 
 export enum GameState {
     Playing,
@@ -18,9 +19,14 @@ export interface GameLogic {
 
 export default function useGameLogic(): GameLogic {
     const [guesses, setGuesses] = useState<Set<string>>(new Set());
-    const correctWord = "HELLO";
+    const [correctWord, setCorrectWord] = useState<string>(getRandomWord())
     const wrongGuesses = Array.from(guesses).filter(letter => !correctWord.includes(letter)).length;
     const [lastGuessedLetter, setLastGuessedLetter] = useState<string>("");
+
+    function getRandomWord() {
+        const index = Math.floor(Math.random() * words.length)
+        return words[index].toUpperCase()
+    }
 
     function guess(letter: string) {
         setGuesses(prev => new Set(prev).add(letter));
@@ -29,6 +35,8 @@ export default function useGameLogic(): GameLogic {
 
     function restart() {
         setGuesses(new Set())
+        setCorrectWord(getRandomWord())
+        
     }
 
     function getGameState() {

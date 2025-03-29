@@ -13,15 +13,18 @@ export interface GameLogic {
     gameState: GameState;
     guess: (letter: string) => void;
     restart: () => void;
+    lastGuessedLetter: string;
 }
 
 export default function useGameLogic(): GameLogic {
     const [guesses, setGuesses] = useState<Set<string>>(new Set());
     const correctWord = "HELLO";
     const wrongGuesses = Array.from(guesses).filter(letter => !correctWord.includes(letter)).length;
+    const [lastGuessedLetter, setLastGuessedLetter] = useState<string>("");
 
     function guess(letter: string) {
         setGuesses(prev => new Set(prev).add(letter));
+        setLastGuessedLetter(letter);
     }
 
     function restart() {
@@ -46,6 +49,7 @@ export default function useGameLogic(): GameLogic {
         gussedLetters: guesses,
         gameState: getGameState(),
         guess: guess,
-        restart: restart
+        restart: restart,
+        lastGuessedLetter: lastGuessedLetter
     };
 }

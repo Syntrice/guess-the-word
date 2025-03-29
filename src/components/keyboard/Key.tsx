@@ -6,9 +6,10 @@ interface KeyProps {
     children: React.ReactNode;
     onClick?: () => void;
     forceDisable?: boolean;
+    letter: string;
 }
 
-export default function Key({ keyState, onClick, children, forceDisable }: KeyProps) {
+export default function Key({ keyState, onClick, children, forceDisable, letter }: KeyProps) {
     function getKeyColor() {
         switch (keyState) {
             case KeyState.Correct:
@@ -43,6 +44,7 @@ export default function Key({ keyState, onClick, children, forceDisable }: KeyPr
                 getKeyColor()
             }
             onClick={onClick}
+            aria-label={"Letter " + {children} + "."}
             disabled={isKeyDisabled()}
             aria-disabled={isKeyDisabled()}
         >

@@ -6,7 +6,9 @@ interface LifeIndicatorProps {
 
 export default function LifeIndicator({ lives }: LifeIndicatorProps) {
     return (
-        <ul className="flex justify-center gap-5">
+        <section>
+            <p aria-live="polite" role="status" className="sr-only">{"Lives remaining: " + lives + "."}</p>
+            <ul className="flex justify-center gap-5">
             {[...Array(lives)].map((_, index) => (
                 <li key={index}>
                     <Icon
@@ -15,6 +17,7 @@ export default function LifeIndicator({ lives }: LifeIndicatorProps) {
                     />
                 </li>
             ))}
-        </ul>
+            </ul>
+        </section>
     );
 }

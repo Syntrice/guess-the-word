@@ -6,10 +6,16 @@
     --color-theme-mid: #323232;
     --color-theme-foreground: #F8F4D9;
     --color-theme-faded: #8D8E8E;
+    --color-theme-amber-accent:#b6851d;
     --color-theme-amber: #FBB928;
     --color-theme-red: #EB5D48;
+    --color-theme-red-accent:#a84435;
     --color-theme-darkred: #B92929;
+    --color-theme-darkred-accent:#881e1e;
     --color-theme-green: #0FA85B;
+    --color-theme-green-accent:#157545;
     --color-theme-purple: #795DA6;
     --color-theme-blue: #0EB5E4;
+    --color-theme-blue-accent: #0a7fa0;
+
 }

@@ -49,10 +49,3 @@ export default function useGameLogic(): GameLogic {
         restart: restart
     };
 }
-
-export enum KeyState {
-    Unknown,
-    Correct,
-    Incorrect,
-}
-

@@ -1,5 +1,5 @@
-import { KeyState } from "../../logic/game-logic";
 import Key from "./Key";
+import { KeyState } from "./key-state";
 
 interface KeyboardProps {
     onType: (letter: string) => void;

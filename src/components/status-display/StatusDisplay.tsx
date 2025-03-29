@@ -1,4 +1,3 @@
-import { Icon } from "@iconify/react/dist/iconify.js";
 import { GameState } from "../../logic/game-logic";
 
 interface StatusDisplayProps {

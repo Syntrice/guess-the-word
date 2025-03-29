@@ -29,7 +29,7 @@ export default function Keyboard({
     }
 
     return (
-        <div className="flex justify-center flex-wrap gap-3">
+        <div className={"flex justify-center flex-wrap gap-3 " + (disabled ? "opacity-50" : "")}>
             {alphabet.split("").map((letter, index) => (
                 <Key
                     onClick={() => onType(letter)}

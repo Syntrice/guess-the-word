@@ -5,12 +5,14 @@ interface KeyboardProps {
     onType: (letter: string) => void;
     guesses: Set<string>;
     correctWord: string;
+    disabled: boolean
 }
 
 export default function Keyboard({
     onType,
     guesses,
     correctWord,
+    disabled,
 }: KeyboardProps) {
     const alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
@@ -33,6 +35,7 @@ export default function Keyboard({
                     onClick={() => onType(letter)}
                     key={index}
                     keyState={getKeyState(letter)}
+                    forceDisable={disabled}
                 >
                     {letter}
                 </Key>

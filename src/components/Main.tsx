@@ -20,6 +20,7 @@ export default function Main() {
                 onType={gameLogic.guess}
                 guesses={gameLogic.gussedLetters}
                 correctWord={gameLogic.correctWord}
+                disabled={gameLogic.gameState === GameState.Lose || gameLogic.gameState === GameState.Win}
             />
             {(gameLogic.gameState === GameState.Lose ||
                 gameLogic.gameState === GameState.Win) && (

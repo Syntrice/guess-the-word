@@ -5,9 +5,10 @@ interface KeyProps {
     keyState: KeyState;
     children: React.ReactNode;
     onClick?: () => void;
+    forceDisable?: boolean;
 }
 
-export default function Key({ keyState, onClick, children }: KeyProps) {
+export default function Key({ keyState, onClick, children, forceDisable }: KeyProps) {
     function getKeyColor() {
         switch (keyState) {
             case KeyState.Correct:
@@ -20,6 +21,10 @@ export default function Key({ keyState, onClick, children }: KeyProps) {
     }
 
     function isKeyDisabled() {
+        if (forceDisable) {
+            return true
+        }
+
         if (keyState === KeyState.Correct || keyState === KeyState.Incorrect) {
             return true;
         }
